@@ -4,7 +4,6 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import AppLoading from "expo-app-loading";
 
 import { useFonts } from "expo-font";
-import { StatusBar } from "expo-status-bar";
 
 import Home from "../screens/home";
 import Login from "../screens/login";
@@ -25,24 +24,20 @@ export default function Routes() {
   if (!fontsLoaded) {
     return <AppLoading />
   } else {
-    return (
-      <>
-        <StatusBar style="inverted" />
-        
-        <NavigationContainer>
-          <Stack.Navigator initialRouteName="Tutorial" screenOptions={{ animation: "none" }}>
-            <Stack.Screen name="Tutorial" options={{
-              headerShown: false,
-            }} component={Tutorial} />
-            <Stack.Screen name="Login" options={{
-              headerShown: false,
-            }} component={Login} />
-            <Stack.Screen name="Home" options={{
-              headerShown: false,
-            }} component={Home} />
-          </Stack.Navigator>
-        </NavigationContainer>
-      </>
+    return (    
+      <NavigationContainer>
+        <Stack.Navigator initialRouteName="Tutorial" screenOptions={{ animation: "none" }}>
+          <Stack.Screen name="Tutorial" options={{
+            headerShown: false,
+          }} component={Tutorial} />
+          <Stack.Screen name="Login" options={{
+            headerShown: false,
+          }} component={Login} />
+          <Stack.Screen name="Home" options={{
+            headerShown: false,
+          }} component={Home} />
+        </Stack.Navigator>
+      </NavigationContainer>
     );
   }
 }

@@ -12,15 +12,27 @@ const styles = StyleSheet.create({
       paddingRight: 24,
     },
 
-    content: {},
-    imageWrapper: {},
+    content: {
+      // backgroundColor: "green",
+      maxHeight: 540,
+      flex: 1,
+      justifyContent: "space-around"
+    },
+    imageWrapper: {
+      // backgroundColor: "red",
+      alignItems: "center",
+      justifyContent: "center"
+    },
     
-    aboutWrapper: {},
+    aboutWrapper: {
+      // backgroundColor: "red",
+      width: "100%"
+    },
     aboutTextWrapper: {},
     aboutTitle: {
       color: "#575757",
       fontFamily: "ReadexPro-SemiBold",
-      fontSize: 26,
+      fontSize: 25,
       textAlign: "center"
     },
     subTitle: {
@@ -32,6 +44,11 @@ const styles = StyleSheet.create({
     aboutControllersWrapper: {
       marginTop: 52,
     },
+
+    logo: {
+      width: 200,
+      height: 90,
+    }
 });
 
 export default styles;

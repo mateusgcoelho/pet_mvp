@@ -4,6 +4,8 @@ import { SafeAreaView } from 'react-native-safe-area-context';
 
 import { StatusBar } from 'expo-status-bar';
 
+import { AntDesign } from '@expo/vector-icons';
+
 import { tutorialData, TutorialDataProps } from '../../utils/tutorialData';
 
 import styles from './styles';
@@ -32,13 +34,15 @@ export default function Tutorial({ navigation }: any): JSX.Element {
 
   return (
     <>
-      <StatusBar style="dark" />
+      <StatusBar style="light" />
       
       <SafeAreaView style={styles.container}>
         <View style={styles.content}>
           <View style={styles.topBar}>
             <TouchableOpacity onPress={() => skipSteps()}>
-              <Text style={styles.skipButtonText}>PULAR</Text>
+              <Text style={styles.skipButtonText}>
+                PULAR
+              </Text>
             </TouchableOpacity>
           </View>
 
@@ -46,13 +50,23 @@ export default function Tutorial({ navigation }: any): JSX.Element {
             <Image source={stepElement.photo} style={styles.photo} />
 
             <View style={{ width: "100%", marginTop: 54, }}>
-              <Text style={styles.title}>{stepElement.title}</Text>
-              <Text style={styles.paragraph}>{stepElement.instruction}</Text>
+              <Text style={styles.title}>
+                {stepElement.title}
+              </Text>
+              <Text style={styles.paragraph}>
+                {stepElement.instruction}
+              </Text>
             </View>
           </View>
 
           <View style={styles.controllersWrapper}>
-            <TouchableOpacity style={styles.nextButton} onPress={nextStep} />
+            <TouchableOpacity
+              activeOpacity={.8}
+              style={styles.nextButton}
+              onPress={nextStep}
+            >
+              <AntDesign name="right" size={24} color="#FEFEFE" />
+            </TouchableOpacity>
 
             <View style={styles.stepControllersWrapper}>
               <View style={styles.stepControllersCirclesWrapper}>

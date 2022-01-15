@@ -4,7 +4,7 @@ import styles from "./styles";
 
 export default function Button({ style, type = "light", children }: any): JSX.Element {
     return (
-        <TouchableOpacity style={{
+        <TouchableOpacity activeOpacity={.8} style={{
             ...styles.container,
             ...style,
             backgroundColor: type == "light" ? "#5949C1" : "transparent",

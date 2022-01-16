@@ -6,27 +6,25 @@ const styles = StyleSheet.create({
       backgroundColor: "#FEFEFE",
       alignItems: "center",
       justifyContent: "center",
+    },
+
+    content: {
+      flex: 1,
+      width: "100%",
+      maxHeight: 540,
+      justifyContent: "space-around",
       paddingTop: 12,
       paddingBottom: 12,
       paddingLeft: 24,
       paddingRight: 24,
     },
-
-    content: {
-      // backgroundColor: "green",
-      maxHeight: 540,
-      flex: 1,
-      justifyContent: "space-around"
-    },
     imageWrapper: {
-      // backgroundColor: "red",
       alignItems: "center",
       justifyContent: "center"
     },
     
     aboutWrapper: {
-      // backgroundColor: "red",
-      width: "100%"
+      width: "100%",
     },
     aboutTextWrapper: {},
     aboutTitle: {

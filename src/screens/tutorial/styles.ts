@@ -4,15 +4,18 @@ const styles = StyleSheet.create({
     container: {
       flex: 1,
       backgroundColor: "#5949C1",
-      paddingTop: 12,
-      paddingBottom: 12,
-      paddingLeft: 24,
-      paddingRight: 24,
+      alignItems: "center",
+      justifyContent: "center"
     },
 
     content: {
       flex: 1,
+      width: "100%",
       justifyContent: "space-between",
+      paddingTop: 12,
+      paddingBottom: 12,
+      paddingLeft: 24,
+      paddingRight: 24,
     },
 
     photo: {
@@ -21,8 +24,8 @@ const styles = StyleSheet.create({
     },
 
     topBar: {
-      height: 40,
       width: "100%",
+      height: 40,
       flexDirection: "row",
       justifyContent: "flex-end",
       alignItems: "center"

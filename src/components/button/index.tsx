@@ -2,9 +2,11 @@ import { TouchableOpacity, Text } from "react-native";
 
 import styles from "./styles";
 
-export default function Button({ style, type = "light", children }: any): JSX.Element {
+export default function Button({ style, type = "light", children, ...rest }: any): JSX.Element {
     return (
-        <TouchableOpacity activeOpacity={.8} style={{
+        <TouchableOpacity {...rest} 
+        activeOpacity={.8} 
+        style={{
             ...styles.container,
             ...style,
             backgroundColor: type == "light" ? "#5949C1" : "transparent",

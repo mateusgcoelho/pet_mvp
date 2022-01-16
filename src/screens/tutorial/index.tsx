@@ -6,16 +6,17 @@ import { StatusBar } from 'expo-status-bar';
 
 import { AntDesign } from '@expo/vector-icons';
 
-import { tutorialData, TutorialDataProps } from '../../utils/tutorialData';
+import { TutorialData, TutorialDataProps } from '../../utils/TutorialData';
+import CirclesSliderShown from '../../components/circlesSliderShown';
 
 import styles from './styles';
 
 export default function Tutorial({ navigation }: any): JSX.Element {
   const [stepIndex, setStepIndex] = useState<number>(0);
-  const [stepElement, setStepElement] = useState<TutorialDataProps>(tutorialData[0]);
+  const [stepElement, setStepElement] = useState<TutorialDataProps>(TutorialData[0]);
 
   useEffect(() => {
-    setStepElement(tutorialData[stepIndex]);
+    setStepElement(TutorialData[stepIndex]);
   }, [stepIndex]);
 
   const nextStep = (): void => {
@@ -65,22 +66,10 @@ export default function Tutorial({ navigation }: any): JSX.Element {
               style={styles.nextButton}
               onPress={nextStep}
             >
-              <AntDesign name="right" size={24} color="#FEFEFE" />
+              <AntDesign name="right" size={16} color="#FEFEFE" />
             </TouchableOpacity>
 
-            <View style={styles.stepControllersWrapper}>
-              <View style={styles.stepControllersCirclesWrapper}>
-                {tutorialData.map((step, index) => (
-                  <View
-                    key={step.title}
-                    style={{
-                      ...styles.stepControllersCircle,
-                      backgroundColor: index == stepIndex ? "white" : "#503CCF"
-                    }}
-                  />
-                ))}
-              </View>
-            </View>
+            <CirclesSliderShown data={TutorialData} stepIndex={stepIndex} />
           </View>
         </View>
       </SafeAreaView>

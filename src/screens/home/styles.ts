@@ -47,13 +47,66 @@ const styles = StyleSheet.create({
     },
 
     advertisingWrapper: {
-      width: "100%",
+      // width: "100%",
     },
     advertisingItem: {
-      height: 80,
-      width: 120,
-      backgroundColor: "red",
       marginRight: 24,
+    },
+    advertisingItemImage: {
+      width: 320,
+      height: 140,
+      borderRadius: 8
+    },
+
+    categoryWrapper: {
+      marginTop: 40,
+      marginBottom: 40,
+    },
+    categoryItemWrapper: {
+      alignItems: "center",
+      justifyContent: "center",
+      marginRight: 16
+    },
+    categoryItem: {
+      height: 72,
+      width: 72,
+      backgroundColor: "#F1F1F1",
+      borderRadius: 8,
+      alignItems: "center",
+      justifyContent: "center",
+    },
+    categoryItemText: {
+      marginTop: 8,
+      fontFamily: "ReadexPro-SemiBold",
+      fontSize: 14,
+      color: "#C1C1C1"
+    },
+
+    highlightsWrapper: {
+      width: "100%",
+      borderTopWidth: .5,
+      borderTopColor: "#E9E9E9"
+    },
+    highlightsTopBar: {
+      width: "100%",
+      paddingTop: 14,
+      paddingBottom: 14,
+      flexDirection: "row",
+      justifyContent: "space-between",
+      alignItems: "center"
+    },
+    highlightsTitle: {
+      fontFamily: "ReadexPro-SemiBold",
+      fontSize: 20,
+      color: "#575757"
+    },
+    highlightsButtonShowMore: {
+      fontSize: 12,
+      fontFamily: "ReadexPro-Bold",
+      color: "#C4C4C4"
+    },
+    highlightsList: {
+      marginTop: 14,
     }
 });
 

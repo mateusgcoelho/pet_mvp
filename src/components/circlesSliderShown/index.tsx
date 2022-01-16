@@ -10,7 +10,7 @@ export default function CirclesSliderShown({ data, stepIndex, design = "light" }
                     <>
                         {design == "light" ? (
                             <View
-                                key={step.id}
+                                key={index}
                                 style={{
                                     ...styles.stepControllersCircle,
                                     backgroundColor: index == stepIndex ? "#FEFEFE" : "#503CCF"
@@ -18,7 +18,7 @@ export default function CirclesSliderShown({ data, stepIndex, design = "light" }
                             />
                         ) : (
                             <View
-                                key={step.id}
+                                key={index}
                                 style={{
                                     ...styles.stepControllersCircle,
                                     backgroundColor: index == stepIndex ? "#FFBE33" : "#F2F2F2"

@@ -12,19 +12,19 @@ export interface TutorialDataProps {
 
 export const TutorialData: TutorialDataProps[] = [
     {
-      id: "coleira-item",
+      id: "coleira-itasdsadsaem",
       photo: Coleira,
       title: "Bem-vindo",
       instruction: "Whata fuki is this men aditionla tes more info hiri",
     },
     {
-      id: "peixe-item",
+      id: "peixe-idasdsadstem",
       photo: Peixe,
       title: "Bateu a fome?",
       instruction: "Whata fuki is this men aditionla more info hiri Whata fuki more info hiri",
     },
     {
-      id: "presente-item",
+      id: "presentdasdsadsae-item",
       photo: Presente,
       title: "Ultimato meu mn",
       instruction: "Whata fuki is this men aditionla tes more info hiri",

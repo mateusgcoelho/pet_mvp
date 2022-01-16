@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-import { Image, Text, TouchableOpacity, View } from 'react-native';
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Image, SafeAreaView, Text, TouchableOpacity, View } from 'react-native';
 
 import { StatusBar } from 'expo-status-bar';
 
@@ -10,6 +9,7 @@ import { TutorialData, TutorialDataProps } from '../../utils/TutorialData';
 import CirclesSliderShown from '../../components/circlesSliderShown';
 
 import styles from './styles';
+import GlobalStyles from '../../styles/GlobalStyles';
 
 export default function Tutorial({ navigation }: any): JSX.Element {
   const [stepIndex, setStepIndex] = useState<number>(0);
@@ -37,7 +37,10 @@ export default function Tutorial({ navigation }: any): JSX.Element {
     <>
       <StatusBar style="light" />
       
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={{
+        ...styles.container,
+        ...GlobalStyles.safeAreaView,
+      }}>
         <View style={styles.content}>
           <View style={styles.topBar}>
             <TouchableOpacity onPress={() => skipSteps()}>

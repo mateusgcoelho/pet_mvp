@@ -6,11 +6,12 @@ import ShopExample from "../../../assets/shop.png";
 
 import styles from "./styles";
 
-export default function ShopItem(): JSX.Element {
+export default function ShopItem({ ...props }): JSX.Element {
     return (
         <TouchableOpacity 
             activeOpacity={.8}
             style={styles.container}
+            {...props}
         >
             <View style={styles.aboutWrapper}>
                 <Image source={ShopExample} style={styles.image} />

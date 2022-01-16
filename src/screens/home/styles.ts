@@ -58,30 +58,6 @@ const styles = StyleSheet.create({
       borderRadius: 8
     },
 
-    categoryWrapper: {
-      marginTop: 40,
-      marginBottom: 40,
-    },
-    categoryItemWrapper: {
-      alignItems: "center",
-      justifyContent: "center",
-      marginRight: 16
-    },
-    categoryItem: {
-      height: 72,
-      width: 72,
-      backgroundColor: "#F1F1F1",
-      borderRadius: 8,
-      alignItems: "center",
-      justifyContent: "center",
-    },
-    categoryItemText: {
-      marginTop: 8,
-      fontFamily: "ReadexPro-SemiBold",
-      fontSize: 14,
-      color: "#C1C1C1"
-    },
-
     highlightsWrapper: {
       width: "100%",
       borderTopWidth: .5,
@@ -107,7 +83,12 @@ const styles = StyleSheet.create({
     },
     highlightsList: {
       marginTop: 14,
-    }
+    },
+
+    // categoryWrapper: {
+    //   marginTop: 40,
+    //   marginBottom: 40,
+    // },
 });
 
 export default styles;

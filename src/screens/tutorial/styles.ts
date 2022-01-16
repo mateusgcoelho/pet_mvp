@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 
     photo: {
       width: "100%",
-      height: 220,
+      height: 230,
     },
 
     topBar: {

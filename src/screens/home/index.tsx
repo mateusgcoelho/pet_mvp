@@ -1,6 +1,5 @@
-import { useRef, useState } from "react";
-import { Image, Text, View, FlatList, ScrollView, TouchableOpacity } from "react-native";
-import { SafeAreaView } from "react-native-safe-area-context";
+import { useEffect, useRef, useState } from "react";
+import { SafeAreaView, Image, Text, View, FlatList, ScrollView, TouchableOpacity } from "react-native";
 
 import { StatusBar } from "expo-status-bar";
 
@@ -10,13 +9,21 @@ import { Ionicons } from "@expo/vector-icons";
 import CirclesSliderShown from "../../components/circlesSliderShown";
 import ShopItem from "../../components/shopItem";
 
-import Logo from "../../../assets/icon.png";
+import Logo from "../../../assets/logo.png";
 import AdvertisingImage from "../../../assets/advertising.png";
 
 import styles from "./styles";
+import CategoryItem from "../../components/categoryItem";
+import CategoryList from "../../components/categoryList";
+import GlobalStyles from "../../styles/GlobalStyles";
+import { useScrollToTop } from "@react-navigation/native";
 
-export default function Home() {
+export default function Home({ navigation }: any): JSX.Element {
   const [advertisingIndex, setAdvertisingIndex] = useState(0);
+
+  const scrollRef = useRef<any>(null);
+  
+  useScrollToTop(scrollRef);
 
   const data = [
     {
@@ -33,34 +40,6 @@ export default function Home() {
     }
   ];
 
-  const categoryData = [
-    {
-      id: "BANNEUM",
-      title: "Comida",
-      icon: () => <FontAwesome name="paw" size={40} color="#575757" />,
-    }, 
-    {
-      id: "BANAA",
-      title: "Saúde",
-      icon: () => <Ionicons name="medical" size={40} color="#575757" />,
-    }, 
-    {
-      id: "BANASADASDSAA",
-      title: "Brinquedos",
-      icon: () => <Ionicons name="medical" size={40} color="#575757" />,
-    }, 
-    {
-      id: "BAaaaaNAA",
-      title: "Saúde",
-      icon: () => <Ionicons name="medical" size={40} color="#575757" />,
-    }, 
-    {
-      id: "aaaaBANAA",
-      title: "Saúde",
-      icon: () => <Ionicons name="medical" size={40} color="#575757" />,
-    }
-  ];
-
   const onViewRef = useRef(({viewableItems}: any): void => {
     if (viewableItems.length < 2) {
       setAdvertisingIndex(viewableItems[0].index);
@@ -71,12 +50,16 @@ export default function Home() {
     <>
       <StatusBar backgroundColor="#FEFEFE" style="dark" />
 
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={{
+        ...styles.container,
+        ...GlobalStyles.safeAreaView,
+      }}>
         <ScrollView
+          ref={scrollRef}
           overScrollMode={"never"}
           removeClippedSubviews={true}
           showsVerticalScrollIndicator={false}
-          contentContainerStyle={{ paddingBottom: 64, }}
+          contentContainerStyle={{ paddingBottom: 56, }}
           alwaysBounceVertical={true}
           style={styles.content}
         >
@@ -125,25 +108,7 @@ export default function Home() {
             />
           </View>
 
-          <View style={styles.categoryWrapper}>
-            <FlatList
-              data={categoryData}
-              overScrollMode={"never"}
-              horizontal={true}
-              showsHorizontalScrollIndicator={false}
-              keyExtractor={(item, _) => item.id}
-              renderItem={({ item }: any) => {
-                return (
-                  <View style={styles.categoryItemWrapper}>
-                    <View style={styles.categoryItem}>
-                      {item.icon()}
-                    </View>
-                    <Text style={styles.categoryItemText}>{item.title}</Text>
-                  </View>
-                );
-              }}
-            />
-          </View>
+          <CategoryList navigation={navigation} />
 
           <View style={styles.highlightsWrapper}>
               <View style={styles.highlightsTopBar}>
@@ -161,8 +126,6 @@ export default function Home() {
               </View>
 
               <View style={styles.highlightsList}>
-                <ShopItem />
-                <ShopItem />
                 <ShopItem />
               </View>
           </View>

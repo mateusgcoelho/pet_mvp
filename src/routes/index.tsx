@@ -1,5 +1,6 @@
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
+import Category from "../screens/category";
 
 import Login from "../screens/login";
 import Tutorial from "../screens/tutorial";
@@ -36,6 +37,14 @@ export default function Routes() {
             headerShown: false,
           }}
           component={DashboardRoutes}
+        />
+
+        <Stack.Screen
+          name="Category"
+          options={{
+            headerShown: false,
+          }}
+          component={Category}
         />
       </Stack.Navigator>
     </NavigationContainer>

@@ -4,12 +4,18 @@
     "slug": "pet_mvp",
     "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "./assets/icon.png",
+    "icon": "./assets/favicon.png",
     "splash": {
-      "image": "./assets/splash.png",
+      "image": "./assets/icon1024white.png",
       "resizeMode": "contain",
       "backgroundColor": "#5949C1"
     },
+    "androidStatusBar": {
+      "backgroundColor": "#5949C1",
+      "barStyle": "light-content",
+      "translucent": true
+    },
+    "userInterfaceStyle": "light",
     "updates": {
       "fallbackToCacheTimeout": 0
     },

@@ -1,19 +1,22 @@
-import { Image, Text, View } from "react-native";
-import { SafeAreaView } from 'react-native-safe-area-context';
+import { Image, SafeAreaView, Text, View } from "react-native";
 import { StatusBar } from "expo-status-bar";
 
-import Logo from "../../../assets/icon.png";
+import Logo from "../../../assets/logo.png";
 
 import Button from "../../components/button";
 
 import styles from "./styles";
+import GlobalStyles from "../../styles/GlobalStyles";
 
 export default function Login({ navigation }: any): JSX.Element {
   return (
     <>
       <StatusBar backgroundColor="#FEFEFE" style="dark" />
 
-      <SafeAreaView style={styles.container}>
+      <SafeAreaView style={{
+        ...styles.container,
+        ...GlobalStyles.safeAreaView,
+      }}>
         <View style={styles.content}>
           <View style={styles.imageWrapper}>
               <Image source={Logo} style={styles.logo} />

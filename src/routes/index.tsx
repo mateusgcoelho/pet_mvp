@@ -3,19 +3,20 @@ import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import Category from "../screens/category";
 
 import Login from "../screens/login";
+import Shop from "../screens/shop";
 import Tutorial from "../screens/tutorial";
 import DashboardRoutes from "./dashboard";
 
 const Stack = createNativeStackNavigator();
 
 export default function Routes() {
-  return (    
+  return (
     <NavigationContainer>
-      <Stack.Navigator 
+      <Stack.Navigator
         initialRouteName="Tutorial"
         screenOptions={{ animation: "none" }}
       >
-        <Stack.Screen 
+        <Stack.Screen
           name="Tutorial"
           options={{
             headerShown: false,
@@ -45,6 +46,14 @@ export default function Routes() {
             headerShown: false,
           }}
           component={Category}
+        />
+
+        <Stack.Screen
+          name="Shop"
+          options={{
+            headerShown: false,
+          }}
+          component={Shop}
         />
       </Stack.Navigator>
     </NavigationContainer>

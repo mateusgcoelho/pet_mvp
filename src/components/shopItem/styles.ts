@@ -6,15 +6,19 @@ const styles = StyleSheet.create({
         flexDirection: "row",
         alignItems: "center",
         justifyContent: "space-between",
+        alignContent: "center",
         paddingTop: 12,
         paddingBottom: 12,
     },
 
     aboutWrapper: {
         flexDirection: "row",
+        alignContent: "center"
     },
     aboutTextsWrapper: {
         marginLeft: 14,
+        justifyContent: "center",
+        alignContent: "center"
     },
 
     image: {

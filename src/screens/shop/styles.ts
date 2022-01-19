@@ -34,16 +34,46 @@ const styles = StyleSheet.create({
       color: "#575757"
     },
 
-    moreOrdersWrapper: {
-      width: "100%"
+    aboutShopWrapper: {
+      marginTop: 12,
     },
-    moreOrdersText: {
-      fontFamily: "ReadexPro-Medium",
-      fontSize: 18,
+    aboutShopHeader: {
+      width: "100%",
+      flexDirection: "row",
+      alignItems: "center"
+    },
+    aboutShopImage: {
+      width: 64,
+      height: 64,
+      borderRadius: 40,
+      borderWidth: 1,
+      borderColor: "#E5E5E5"
+    },
+    aboutShopTexts: {
+      width: "100%",
+      maxWidth: 220,
+      marginLeft: 8
+    },
+    aboutShopController: {
+      marginLeft: 4,
+    },
+    aboutShopName: {
+      fontFamily: "ReadexPro-SemiBold",
+      fontSize: 14,
+      lineHeight: 15,
       color: "#575757"
     },
-    moreOrdersList: {
-      marginTop: 12,
+    aboutShopDescription: {
+      fontFamily: "ReadexPro-Light",
+      fontSize: 12,
+      color: "#C4C4C4"
+    },
+
+    ratingWrapper: {
+
+    },
+    ratingText: {
+      
     }
 });
 

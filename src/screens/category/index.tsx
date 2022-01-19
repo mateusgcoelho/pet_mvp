@@ -12,7 +12,7 @@ import styles from "./styles";
 import { useEffect } from "react";
 
 export default function Category({ route, navigation }: any): JSX.Element {
-    const { categoryId } = route.params;
+    const { categoryId, categoryName } = route.params;
 
     const goBack = (): void => {
         navigation.goBack();
@@ -31,7 +31,9 @@ export default function Category({ route, navigation }: any): JSX.Element {
                         <Entypo name="chevron-left" size={24} color="#5949C1" />
                     </TouchableOpacity>
 
-                    <Text style={styles.headerTitle}>{categoryId.toUpperCase()}</Text>
+                    <Text style={styles.headerTitle}>
+                        {categoryName.toUpperCase()}
+                    </Text>
                 </View>
 
                 <ScrollView

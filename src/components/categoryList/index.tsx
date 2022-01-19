@@ -28,7 +28,13 @@ export default function CategoryList({ navigation, itemActiveId = "", style, ...
               horizontal={true}
               showsHorizontalScrollIndicator={false}
               keyExtractor={(item, _) => item.id}
-              renderItem={({ item }: any) => <CategoryItem isActive={itemActiveId == item.id} item={item} navigation={navigation} />}
+              renderItem={({ item }: any) => 
+                <CategoryItem 
+                    isActive={itemActiveId == item.id} 
+                    item={item} 
+                    navigation={navigation} 
+                />
+              }
             />
         </View>
     )
